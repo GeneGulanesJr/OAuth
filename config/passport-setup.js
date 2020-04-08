@@ -33,7 +33,7 @@ passport.deserializeUser((id, done)=>{
 passport.use(
     new GoogleStrategy({
         // options for the google strat
-        callbackURL: '/auth/google/callback',
+        callbackURL: 'http://gulanesoauth.herokuapp.com/auth/google/callback',
         clientID: keys.google.clientID,
         clientSecret: keys.google.clientSecret
     }, (accessToken, refreshToken, profile, done)=>{
@@ -75,7 +75,7 @@ passport.use(
 passport.use(new FacebookStrategy({
         clientID: keys.facebook.clientID,
         clientSecret: keys.facebook.clientSecret,
-        callbackURL: "http://localhost:3000/auth/facebook/callback",
+        callbackURL: "http://gulanesoauth.herokuapp.com/auth/facebook/callback",
         profileFields: ['id', 'displayName', 'photos', 'email']
     },
     function(accessToken, refreshToken, profile, cb) {
@@ -112,7 +112,7 @@ passport.use(
         {
             clientID: keys.spotify.clientID,
             clientSecret: keys.spotify.clientSecret,
-            callbackURL: "http://localhost:3000/auth/spotify/callback"
+            callbackURL: "http://gulanesoauth.herokuapp.com/auth/spotify/callback"
 
         },
         function(accessToken, refreshToken, expires_in, profile, done) {
@@ -161,7 +161,7 @@ passport.use(
 );
 
 passport.use(new SteamStrategy({
-        returnURL: 'http://localhost:3000/auth/steam/callback',
+        returnURL: 'http://gulanesoauth.herokuapp.com/auth/steam/callback',
         realm: 'http://localhost:3000/',
         apiKey: '5273DA83FD3722289504AC44A40D65D8',
     },
@@ -202,7 +202,7 @@ passport.use(new SteamStrategy({
 passport.use(new twitchStrategy({
         clientID: keys.twitch.clientID,
         clientSecret: keys.twitch.clientSecret,
-        callbackURL: "http://127.0.0.1:3000/auth/twitch/callback",
+        callbackURL: "http://gulanesoauth.herokuapp.com/auth/twitch/callback",
         scope: "user_read"
     },
     (accessToken, refreshToken, profile, done)=>{
