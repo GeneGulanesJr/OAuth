@@ -89,7 +89,6 @@ passport.use(new FacebookStrategy({
                     name: profile.displayName,
                     picture: profile.photos[0].value
                 };
-
                 if(err){
                     //already have the user
                     const currentUser = _user;

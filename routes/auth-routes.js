@@ -26,12 +26,24 @@ router.get('/google/callback',passport.authenticate('google'),(req, res)=>{
     res.redirect('/profile/');
 });
 
+
+
 router.get('/facebook',
     passport.authenticate('facebook'));
 
 router.get('/facebook/callback',passport.authenticate('facebook'),(req, res)=>{
     res.redirect('/profile/');
 });
+
+
+
+
+
+
+
+
+
+
 
 router.get('/spotify', passport.authenticate('spotify'), function(req, res) {
 });
