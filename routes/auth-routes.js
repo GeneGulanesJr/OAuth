@@ -26,4 +26,31 @@ router.get('/google/callback',passport.authenticate('google'),(req, res)=>{
     res.redirect('/profile/');
 });
 
+router.get('/facebook',
+    passport.authenticate('facebook'));
+
+router.get('/facebook/callback',passport.authenticate('facebook'),(req, res)=>{
+    res.redirect('/profile/');
+});
+
+router.get('/spotify', passport.authenticate('spotify'), function(req, res) {
+});
+router.get('/spotify/callback',passport.authenticate('spotify'),(req, res)=>{
+    res.redirect('/profile/');
+});
+
+router.get('/steam', passport.authenticate('steam'), function(req, res) {
+});
+router.get('/steam/callback',passport.authenticate('steam'),(req, res)=>{
+    res.redirect('/profile/');
+});
+
+router.get('/twitch', passport.authenticate('twitch'), function(req, res) {
+});
+router.get('/twitch/callback',passport.authenticate('twitch'),(req, res)=>{
+    res.redirect('/profile/');
+});
+
+
+
 module.exports = router;

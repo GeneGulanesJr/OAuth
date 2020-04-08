@@ -1,32 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Oauth Activity By Clyde Balaman</title>
-</head>
-<body>
-    
-    <% if(user) { %>
-        <a href="/auth/logout">Logout</a>    
-        <br>
-        <% } else { %>
-        <a href="/auth/login">Login</a>
-        <br>
-        <% } %>
-        <a href="/">Homepage</a>
-        <br>
-        <a href="/profile">Profile</a>
-        <br>
-        <hr>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.2/css/adminlte.min.css">
 
-    <h1>Welcome to your profile, <%= user._name %> </h1>    
-    <p>
-        extra information about you
-        <img src="<%= user._picture %>" alt="picture">
-        <p>This is your profile thumbnail</p>
-    </p>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.2/css/alt/adminlte.components.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.2/css/alt/adminlte.core.min.css"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.2/css/alt/adminlte.extra-components.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.2/css/alt/adminlte.pages.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.2/css/alt/adminlte.plugins.min.css"></script>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Profile Page Ni Gene</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+
+                <% if(user) { %>
+                    <a href="/auth/logout">Logout</a>
+                    <br>
+                <% } else { %>
+                    <a href="/auth/login">Login</a>
+                    <br>
+                <% } %>
+                <a href="/">Homepage</a>
+                <br>
+                <a href="/profile">Profile</a>
+                <br>
+                <hr>
+
+
+                <p>
+
+
+
+                </p>
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle"
+                                 src="<%= user._picture %>"
+                                 alt="User profile picture">
+                        </div>
+
+                        <h3 class="profile-username text-center"><%= user._name %></h3>
+
+                        <p class="text-muted text-center">Software Engineer</p>
+
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>Followers</b> <a class="float-right">1,322</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Following</b> <a class="float-right">543</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Friends</b> <a class="float-right">13,287</a>
+                            </li>
+                        </ul>
+
+                        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+</div>
 
 </body>
 </html>
