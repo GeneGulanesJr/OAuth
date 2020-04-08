@@ -202,7 +202,7 @@ passport.use(new SteamStrategy({
 passport.use(new twitchStrategy({
         clientID: keys.twitch.clientID,
         clientSecret: keys.twitch.clientSecret,
-        callbackURL: "http://gulanesoauth.herokuapp.com/auth/twitch/callback",
+        callbackURL: "http://127.0.0.1:3000/auth//twitch/callback",
         scope: "user_read"
     },
     (accessToken, refreshToken, profile, done)=>{
